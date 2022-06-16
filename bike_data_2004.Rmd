@@ -1,0 +1,30 @@
+---
+title: "Case Study 1"
+output: html_document
+date: '2022-06-08'
+---
+
+```{r}
+install.packages("tidyverse")
+library("tidyverse")
+install.packages("dplyr")
+library("dplyr")
+install.packages("ggplot2")
+library("ggplot2")
+
+```
+
+```{r}
+bike_data_2004 <- read.csv("2004.tripdata.OG.csv")
+```
+
+```{r}
+head(bike_data_2004)
+colnames(bike_data_2004)
+
+ ride_length <- bike_data_2004 %>%
+  mutate(ride_length = ended_at - started_at)
+
+
+```
+
